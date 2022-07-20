@@ -1,6 +1,6 @@
 import { world, BlockLocation, Block } from "mojang-minecraft";
 
-var valid_blocks = ["minecraft:log", "minecraft:log2", "minecraft:mangrove_log", "minecraft:warped_stem", "minecraft:crimson_stem"];
+const valid_blocks = ["minecraft:log", "minecraft:log2", "minecraft:mangrove_log", "minecraft:warped_stem", "minecraft:crimson_stem"];
 
 function recursion_search(currentBlock, queue, count){
   if (queue.length <= 0) {
@@ -59,6 +59,7 @@ function startSearch(root){
 }
 
 function testerStick(player, held_item, location){
+  // If player holds a tester stick, then start execution of this code.
   if(held_item == "yn:tester_stick"){
     let block = world.getDimension(player.dimension.id).getBlock(new BlockLocation(location[0], location[1], location[2]));
     let id = block.id;
